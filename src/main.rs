@@ -4,9 +4,7 @@ mod authenticate;
 async fn main() {
     println!("Hello, world!");
 
-    let resp = authenticate::test1();
+    let resp = authenticate::ServerConfig::new();
 
-    println!("resp {:?}",resp.await)
-    
-
+    println!("resp {:}", resp.await)
 }
