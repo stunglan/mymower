@@ -27,12 +27,11 @@ impl fmt::Display for ServerConfig {
   fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
     write!(
       f,
-      "({}, {}, {}, {}, {},{})",
+      "(user_name: {},  application_key: {}, auth_uri: {}, app_uri: {}, bearer: {})",
       self.user_name,
-      self.user_password,
       self.application_key,
       self.auth_uri,
-      self.application_key,
+      self.app_uri,
       self.bearer
     )
   }
