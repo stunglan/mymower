@@ -97,13 +97,14 @@ impl ServerConfig {
 
 
     let resp = client.get(&self.husqvarna_uri)
-    .header("Authorization",format!("{} {}","Bearer ",&self.bearer))
+    //let resp = client.get("https://postman-echo.com/get")
+    .header("Authorization",format!("{} {}","Bearer",&self.bearer))
     .header("Authorization-Provider","husqvarna")
     .header("X-Api-Key",&self.application_key)
     .send().await;
 
     let mowers = resp.unwrap().text().await.unwrap();
-    println!("movers resp {:?}",mowers);
+    println!("\n\n\nmovers resp {:?}",mowers);
     mowers
 
   }
